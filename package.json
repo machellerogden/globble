@@ -1,6 +1,6 @@
 {
   "name": "globble",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "given glob pattern(s) loads data from file system",
   "main": "index.js",
   "scripts": {
