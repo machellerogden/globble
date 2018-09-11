@@ -1,8 +1,8 @@
 # globble
 
-> Globble loads data from JSON file, YAML files and JS files which export data.
+> Globble loads data from JSON and YAML files as well as from JS files which export valid JSON data structures.
 
-Built atop on [`globby`](https://github.com/sindresorhus/globby) by the brilliant and prolific [Sindre Sorhus](https://github.com/sindresorhus), which in turn is built atop [`fast-glob`](https://github.com/mrmlnc/fast-glob) by [Denis Malinochkin](https://github.com/mrmlnc).
+Built atop [`globby`](https://github.com/sindresorhus/globby) by the brilliant and prolific [Sindre Sorhus](https://github.com/sindresorhus), which in turn is built atop [`fast-glob`](https://github.com/mrmlnc/fast-glob) by [Denis Malinochkin](https://github.com/mrmlnc).
 
 ## Install
 

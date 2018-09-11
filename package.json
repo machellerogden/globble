@@ -1,7 +1,7 @@
 {
   "name": "globble",
   "version": "0.1.1",
-  "description": "given glob pattern(s) loads data from file system",
+  "description": "Globble loads data from JSON and YAML files as well as from JS files which export valid JSON data structures.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha \"test/**/*.spec.js\""
