@@ -2,6 +2,8 @@
 
 > Globble loads data from JSON and YAML files as well as from JS files which export valid JSON data structures.
 
+[![Version](https://img.shields.io/npm/v/globble.svg)]() [![Travis](https://img.shields.io/travis/machellerogden/globble.svg)]() [![License](https://img.shields.io/npm/l/globble.svg)]()
+
 Built atop [`globby`](https://github.com/sindresorhus/globby) by the brilliant and prolific [Sindre Sorhus](https://github.com/sindresorhus), which in turn is built atop [`fast-glob`](https://github.com/mrmlnc/fast-glob) by [Denis Malinochkin](https://github.com/mrmlnc).
 
 ## Install
