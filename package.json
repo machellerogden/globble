@@ -1,6 +1,6 @@
 {
   "name": "globble",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "given glob pattern(s) loads data from file system",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "pre-commit": "^1.2.2"
   },
   "precommit": [
-      "test"
+    "test"
   ]
 }
