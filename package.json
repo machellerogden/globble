@@ -1,6 +1,6 @@
 {
   "name": "globble",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Globble loads data from JSON and YAML files as well as from JS files which export valid JSON data structures.",
   "main": "index.js",
   "scripts": {
