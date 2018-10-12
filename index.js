@@ -39,7 +39,7 @@ function globble(givenPatterns, options = {}) {
         patterns,
         dir
     } = init(givenPatterns, options);
-    return globby(patterns, { cwd: dir, ...globbyOptions }).then(paths => reduce(paths, clobber ? {} : []));
+    return globby(patterns, { cwd: dir, ...globbyOptions }).then(paths => reduce(globbyOptions.cwd || dir, paths, clobber ? {} : []));
 }
 
 globble.sync = (givenPatterns, options = {}) => {
@@ -50,11 +50,12 @@ globble.sync = (givenPatterns, options = {}) => {
         patterns,
         dir
     } = init(givenPatterns, options);
-    return reduce(globby.sync(patterns, { cwd: dir, ...globbyOptions }), clobber ? {} : []);
+    return reduce(globbyOptions.cwd || dir, globby.sync(patterns, { cwd: dir, ...globbyOptions }), clobber ? {} : []);
 }
 
 function init(givenPatterns, options) {
     const {
+        cwd,
         relative = true,
         clobber = false,
         globbyOptions = {}
@@ -64,19 +65,19 @@ function init(givenPatterns, options) {
         ? givenPatterns.map(p => untildify(p))
         : untildify(givenPatterns);
 
-    const dir = relative
-        ? path.dirname(callsites()[1].getFileName())
+    const dir = cwd || relative
+        ? path.dirname(callsites()[2].getFileName())
         : '/';
 
     return { patterns, dir, clobber, globbyOptions };
 }
 
-function reduce(paths, initial) {
+function reduce(cwd, paths, initial) {
     return paths.reduce((acc, currentFile) => {
 
         const file = {
             ...path.parse(currentFile),
-            path: path.resolve(currentFile)
+            path: path.resolve(cwd, currentFile)
         };
 
         const key = file.ext.startsWith('.')
